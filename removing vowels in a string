@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<string.h>
+void remove_vowels(char *str) {
+    int len=strlen(str);
+    int i,j;
+    
+    for (i=0,j=0;i<len;i++) {
+        if (str[i]!='a' && str[i]!='e' && str[i]!='i' && str[i]!='o' && str[i]!='u'
+        && str[i]!='A' && str[i]!='E' && str[i]!='I' && str[i]!='O' && str[i]!='U') {
+            str[j++]=str[i];
+        }
+    }
+    str[j]="\0";
+}
+int main() {
+    char str[100];
+    printf("enter a string:");
+    fgets(str,sizeof(str),stdin);
+    
+    remove_vowels(str);
+    printf("the string after removing the vowels: %s",str);
+    
+    return 0;
+}
